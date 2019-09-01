@@ -1,58 +1,82 @@
 #football {
-  main {
-    flex-direction: row;
-  }
 
   .content {
     text-align: center;
-    margin: auto;
     padding: 15px;
-  }
-
-  h1 {
-    font-size: 200px;
-    color: $colorWhite;
-    font-family: $dancing-font;
-  }
-
-  h2 {
-    font-size: 60px;
-    color: $colorYellow;
     font-family: $montserrat-font;
+  }
+
+  .teams {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .team {
+    width: 200px;
+    height: 200px;
+    background: transparent no-repeat center;
+    -webkit-background-size: contain;
+    background-size: contain;
+  }
+
+  .info {
+    padding: 15px;
   }
 
   p {
-    font-size: 12px;
+    font-size: 30px;
     color: $colorWhite;
     font-family: $montserrat-font;
-    line-height: 1.4;
-    text-align: left;
-    width: 100%;
-    max-width: 400px;
-    margin: 30px 0;
-    font-weight: 300;
+    font-weight: 600;
+    line-height: 1.2;
+    padding: 5px 0;
+  }
+
+  h1 {
+    font-size: 60px;
+    color: $colorWhite;
+    font-weight: bold;
+    font-family: $dancing-font;
+    margin-top: 30px;
   }
 
   form {
-    background-color: rgba(255, 255, 255, 0.6);
-    -webkit-border-radius: 10px 0 0 10px;
-    -moz-border-radius: 10px 0 0 10px;
-    border-radius: 10px 0 0 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
     padding: 15px;
-    position: relative;
-    z-index: 2;
-    width: 300px;
-    margin: auto 0;
-    right: -300px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    max-width: 767px;
+    height: calc(100vh - 60px);
+    margin: auto;
     -webkit-transition: .4s ease;
     -moz-transition: .4s ease;
     -ms-transition: .4s ease;
     -o-transition: .4s ease;
     transition: .4s ease;
+    opacity: 0;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &.active {
-      right: 0;
+      opacity: 1;
+      z-index: 2;
     }
+  }
+
+  .form-content {
+    width: 100%;
+    margin: auto;
   }
 
   label {
@@ -107,31 +131,31 @@
   }
 
   .join-btn {
-    position: absolute;
-    right: 0;
-    border: 2px solid $colorWhite;
-    border-right: 0;
-    -webkit-border-radius: 100px 0 0 100px;
-    -moz-border-radius: 100px 0 0 100px;
-    border-radius: 100px 0 0 100px;
-    padding: 30px 15px 30px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-family: $montserrat-font;
-    font-size: 22px;
+    font-size: 14px;
     color: $colorWhite;
-    font-weight: bold;
     cursor: pointer;
     -webkit-transition: .4s ease;
     -moz-transition: .4s ease;
     -ms-transition: .4s ease;
     -o-transition: .4s ease;
     transition: .4s ease;
+    width: 100px;
+    height: 100px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 1px solid $colorWhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 30px 0;
 
-    svg {
-      width: 100px;
+    img {
+      width: 40px;
       height: auto;
+      margin-bottom: 10px;
       -webkit-transition: .4s ease;
       -moz-transition: .4s ease;
       -ms-transition: .4s ease;
@@ -139,10 +163,15 @@
       transition: .4s ease;
       fill: $colorWhite;
     }
+
+    span {
+      margin-bottom: 15px;
+    }
   }
 
   #img-crop {
-    width: 120px;
+    width: 200px;
+    height: 170px;
     margin: auto;
     position: relative;
   }
@@ -166,9 +195,13 @@
 
   .cr-boundary {
     height: 120px;
-    background: transparent url("../img/profile-picture.png") no-repeat center;
-    -webkit-background-size: cover;
-    background-size: cover;
+    background: transparent url("../img/card.png") no-repeat center;
+    -webkit-background-size: contain;
+    background-size: contain;
+  }
+
+  .cr-viewport {
+    border-color: black;
   }
 
   #cropper {
