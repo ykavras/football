@@ -5,7 +5,6 @@
             <div class="teams">
                 <div class="team" style="background-image: url({% static 'img/logos/gs-logo.png' %})"></div>
                 <div class="info">
-                    <p>31.Hafta</p>
                     <p>19:00</p>
                     <p>29 Nisan 2019 Pazar</p>
                 </div>
@@ -15,7 +14,7 @@
         </div>
         <a class="join-btn">
             <img src="{% static 'img/ticket.svg' %}" alt="ticket">
-            <span>Buy Ticket</span>
+            <span>Bileti Al</span>
         </a>
         <form>
             <div class="form-content">
@@ -24,33 +23,33 @@
                 </div>
                 <div id="cropper">
                     <img src="{% static 'img/cut.svg' %}" alt="cut">
-                    <span>Cut</span>
+                    <span>Resmi Kes</span>
                 </div>
                 <input type="hidden" id="imagebase64" name="imagebase64">
                 <label for="upload-image">
-                    <input type="file" name="image" id="upload-image" value="Choose a file" required>
+                    <input type="file" name="image" id="upload-image" required>
                 </label>
                 <label for="name">
-                    <input type="text" name="name" id="name" placeholder="Name" required>
+                    <input type="text" name="name" id="name" placeholder="İsim" required>
                 </label>
                 <label for="surname">
-                    <input type="text" name="surname" id="surname" placeholder="Surname" required>
+                    <input type="text" name="surname" id="surname" placeholder="Soyisim" required>
                 </label>
                 <label for="email">
-                    <input type="email" name="email" id="email" placeholder="E-Mail" required>
+                    <input type="email" name="email" id="email" placeholder="E-Posta" required>
                 </label>
                 <label for="tel">
-                    <input type="tel" name="tel" id="tel" placeholder="Phone" required>
+                    <input type="tel" name="tel" id="tel" placeholder="Telefon" required>
                 </label>
                 <label for="address">
-                    <input name="address" id="address" placeholder="Address" required>
+                    <input name="address" id="address" placeholder="Adres" required>
                 </label>
                 <label for="reference-code">
-                    <input type="text" name="reference_code" id="reference-code" placeholder="Reference Code" required>
+                    <input type="text" name="reference_code" id="reference-code" placeholder="Referans Kodu">
                 </label>
                 <button type="submit">
                     <img src="{% static 'img/ball.svg' %}" alt="ball">
-                    <span>Join</span>
+                    <span>Gönder</span>
                 </button>
             </div>
         </form>
