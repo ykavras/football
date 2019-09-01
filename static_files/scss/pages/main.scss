@@ -33,11 +33,11 @@
     padding: 5px 0;
   }
 
-  h1 {
+  .team-names {
     font-size: 60px;
     color: $colorWhite;
-    font-weight: bold;
-    font-family: $dancing-font;
+    font-family: $montserrat-font;
+    font-weight: 600;
     margin-top: 30px;
   }
 
@@ -130,7 +130,7 @@
     }
   }
 
-  .join-btn {
+  .ticket-btn {
     font-family: $montserrat-font;
     font-size: 14px;
     color: $colorWhite;
@@ -145,23 +145,35 @@
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
-    border: 1px solid $colorWhite;
+    border: 2px dotted $colorWhite;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     margin: 30px 0;
+    -webkit-animation: loop 2s linear infinite;
+    -o-animation: loop 2s linear infinite;
+    animation: loop 2s linear infinite;
+
+    &:hover {
+      -webkit-animation: none;
+      -o-animation: none;
+      animation: none;
+
+      img {
+        -webkit-animation: none;
+        -o-animation: none;
+        animation: none;
+      }
+    }
 
     img {
       width: 40px;
       height: auto;
       margin-bottom: 10px;
-      -webkit-transition: .4s ease;
-      -moz-transition: .4s ease;
-      -ms-transition: .4s ease;
-      -o-transition: .4s ease;
-      transition: .4s ease;
-      fill: $colorWhite;
+      -webkit-animation: ticket 2s linear infinite;
+      -o-animation: ticket 2s linear infinite;
+      animation: ticket 2s linear infinite;
     }
 
     span {
@@ -215,5 +227,41 @@
       height: auto;
       margin-right: 5px;
     }
+  }
+}
+
+@keyframes loop {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes ticket {
+  0% {
+    -webkit-transform: rotate(0) scale(0.8);
+    -moz-transform: rotate(0) scale(0.8);
+    -ms-transform: rotate(0) scale(0.8);
+    -o-transform: rotate(0) scale(0.8);
+    transform: rotate(0) scale(0.8);
+  }
+  50% {
+    -webkit-transform: scale(1) rotate(-45deg);
+    -moz-transform: scale(1) rotate(-45deg);
+    -ms-transform: scale(1) rotate(-45deg);
+    -o-transform: scale(1) rotate(-45deg);
+    transform: scale(1) rotate(-45deg);
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(0.8);
+    -moz-transform: rotate(0) scale(0.8);
+    -ms-transform: rotate(0) scale(0.8);
+    -o-transform: rotate(0) scale(0.8);
+    transform: rotate(0) scale(0.8);
   }
 }

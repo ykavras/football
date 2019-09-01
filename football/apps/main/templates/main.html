@@ -1,4 +1,8 @@
 {% extends 'base.html' %}{% load staticfiles %}
+{% block StyleSheet %}
+    <link rel="stylesheet" href="{% static 'croppie/croppie.css' %}">
+
+{% endblock %}
 {% block App %}
     <main>
         <div class="content">
@@ -10,9 +14,9 @@
                 </div>
                 <div class="team" style="background-image: url({% static 'img/logos/bjk-logo.svg' %})"></div>
             </div>
-            <h1 class="names">GALATASARAY - BEŞİKTAŞ</h1>
+            <h1 class="team-names">GALATASARAY - BEŞİKTAŞ</h1>
         </div>
-        <a class="join-btn">
+        <a class="ticket-btn">
             <img src="{% static 'img/ticket.svg' %}" alt="ticket">
             <span>Bileti Al</span>
         </a>
@@ -57,48 +61,5 @@
 {% endblock %}
 {% block Scripts %}
     <script src="{% static 'croppie/croppie.min.js' %}"></script>
-    <script type="text/javascript">
-        let $uploadCrop;
-
-        function readFile(input) {
-            if (input.files && input.files[0]) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    $uploadCrop.croppie('bind', {
-                        url: e.target.result
-                    });
-                    $('.ready').addClass('active');
-                };
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        $uploadCrop = $('#img-crop').croppie({
-            viewport: {width: 200, height: 120},
-            enableOrientation: true,
-            mouseWheelZoom: 'ctrl'
-        });
-
-        $('#upload-image').on('change', function () {
-            readFile(this);
-        });
-
-        $('#cropper').on('click', function () {
-            $uploadCrop.croppie('result', {
-                type: 'canvas',
-                size: 'original'
-            }).then(function (resp) {
-                $('#imagebase64').val(resp);
-            });
-        });
-
-        $('form').on('submit', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-        });
-
-        $('.join-btn').on('click', function () {
-            $('form').addClass('active');
-        });
-    </script>
+    <script src="{% static 'js/main.js' %}"></script>
 {% endblock %}
