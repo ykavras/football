@@ -1,0 +1,16 @@
+{% load staticfiles %}<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Football | {{ title }}</title>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Montserrat:300,400,600,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'croppie/croppie.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body id="{{ body_id }}">
+{% block App %}{% endblock %}
+<script type="text/javascript" src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+{% block Scripts %}{% endblock %}
+</body>
+</html>
