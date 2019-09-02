@@ -18,6 +18,7 @@
   label {
     display: block;
     margin-bottom: 15px;
+    position: relative;
 
     &:last-child {
       margin-bottom: 0;
@@ -134,6 +135,20 @@
       height: auto;
       margin-right: 5px;
     }
+  }
+
+  .card-span {
+    position: absolute;
+    right: 15px;
+    font-size: 12px;
+    font-family: $montserrat-font;
+    color: $colorWhite;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
   }
 
 }

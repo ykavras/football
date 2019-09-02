@@ -46,22 +46,25 @@
     <main>
         <div class="content">
             <h1>Formu <span>Doldurunuz</span></h1>
-            <form enctype="multipart/form-data">
+            <form method="post" action="{% url 'apply:apply' %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for message in messages %}
                     <p class="form-alert">{{ message }}</p>
                 {% endfor %}
                 <div class="form-content">
+                    <!--
                     <div id="img-crop">
-                        <img class="ready" src="{% static 'img/check.svg' %}" alt="check">
-                    </div>
-                    <div id="cropper">
-                        <img src="{% static 'img/cut.svg' %}" alt="cut">
-                        <span>Resmi Kes</span>
-                    </div>
-                    <input type="hidden" id="imagebase64" name="imagebase64">
+                            <img class="ready" src="{% static 'img/check.svg' %}" alt="check">
+                        </div>
+                        <div id="cropper">
+                            <img src="{% static 'img/cut.svg' %}" alt="cut">
+                            <span>Resmi Kes</span>
+                        </div>
+                        <input type="hidden" id="imagebase64" name="imagebase64">
+                    -->
                     <label for="upload-image">
                         <input type="file" name="id_image" id="upload-image" required>
+                        <span class="card-span">Kartınızın Önyüzünü Çekip Atınız</span>
                     </label>
                     <label for="name">
                         <input type="text" name="name" id="name" placeholder="İsim" required>
@@ -95,5 +98,4 @@
 {% endblock %}
 {% block Scripts %}
     <script src="{% static 'croppie/croppie.min.js' %}"></script>
-    <script src="{% static 'js/form.js' %}"></script>
 {% endblock %}
