@@ -20,7 +20,11 @@
             <img src="{% static 'img/ticket.svg' %}" alt="ticket">
             <span>Bileti Al</span>
         </a>
-        <form>
+        <form method="post" action="{% url 'apply:apply' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for message in messages %}
+                <p style="color: black; font-size: 14px">{{ message }}</p>
+            {% endfor %}
             <div class="form-content">
                 <div id="img-crop">
                     <img class="ready" src="{% static 'img/check.svg' %}" alt="check">
@@ -31,28 +35,28 @@
                 </div>
                 <input type="hidden" id="imagebase64" name="imagebase64">
                 <label for="upload-image">
-                    <input type="file" name="image" id="upload-image" required>
+                    <input type="file" name="id_image" id="upload-image" required>
                 </label>
                 <label for="name">
                     <input type="text" name="name" id="name" placeholder="İsim" required>
                 </label>
                 <label for="surname">
-                    <input type="text" name="surname" id="surname" placeholder="Soyisim" required>
+                    <input type="text" name="last_name" id="surname" placeholder="Soyisim" required>
                 </label>
                 <label for="email">
                     <input type="email" name="email" id="email" placeholder="E-Posta" required>
                 </label>
                 <label for="tel">
-                    <input type="tel" name="tel" id="tel" placeholder="Telefon" required>
+                    <input type="tel" name="phone" id="tel" placeholder="Telefon (+99999999999)" required>
                 </label>
                 <label for="address">
                     <input name="address" id="address" placeholder="Adres" required>
                 </label>
                 <label for="reference-code">
-                    <input type="text" name="reference_code" id="reference-code" placeholder="Referans Kodu">
+                    <input type="text" name="reference_code_string" id="reference-code" placeholder="Referans Kodu">
                 </label>
-                <button type="submit">
-                    <img src="{% static 'img/ball.svg' %}" alt="ball">
+                <button type="submit" value="Gönder">
+{#                    <img src="{% static 'img/ball.svg' %}" alt="ball">#}
                     <span>Gönder</span>
                 </button>
             </div>

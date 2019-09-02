@@ -1,0 +1,39 @@
+from django.db import models
+from django.core.validators import RegexValidator
+
+from ...utils.file_rename import PathAndRename
+
+
+class ReferenceCode(models.Model):
+    code = models.CharField(verbose_name='Kod', max_length=20, unique=True)
+    is_used = models.BooleanField(verbose_name='Kullanılma Durumu')
+
+    def __str__(self):
+        return self.code
+
+    class Meta:
+        verbose_name = 'Referans Kodu'
+        verbose_name_plural = 'Referans Kodları'
+
+
+class Application(models.Model):
+    phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',
+                                 message='Telefon numarası "+999999999" formatında olmalı.')
+    name = models.CharField(verbose_name='Adı', max_length=20)
+    last_name = models.CharField(verbose_name='Soyadı', max_length=20)
+    email = models.EmailField(verbose_name='E-mail', unique=True)
+    phone = models.CharField(verbose_name='Telefon Numarası', max_length=15, validators=[phone_regex], unique=True)
+    address = models.CharField(verbose_name='Adres', max_length=1000)
+    reference_code = models.OneToOneField(ReferenceCode, verbose_name='Referans Kodu', related_name='application',
+                                          on_delete=models.CASCADE,
+                                          null=True,
+                                          blank=True)
+    id_photo = models.ImageField(verbose_name='Kimlik Fotoğrafı', upload_to=PathAndRename('application/id_photos/'))
+    create_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.name} {self.last_name}'
+
+    class Meta:
+        verbose_name = 'Başvuru'
+        verbose_name_plural = 'Başvurular'

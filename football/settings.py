@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'football.apps.main',
+    'football.apps.apply',
 ]
 
 MIDDLEWARE = [
