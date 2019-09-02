@@ -25,16 +25,17 @@ class ApplyView(View):
                                       'iletişim kanallarından biri ile sizi bilgilendireceğiz.')
             process_status = True
         else:
-            messages.error(request, 'Formdaki zorunlu alanların tümünü doldurduğunuza ve girilen '
-                                    'tüm bilgilerin doğru olduğuna emin olun!')
-
-            messages.error(request, form.non_field_errors())
-            for error in form.errors:
-                if error != '__all__':
-                    try:
-                        messages.error(request, form.fields[error].errors)
-                    except:
-                        pass
+            if form.errors:
+                messages.error(request, form.non_field_errors())
+                for error in form.errors:
+                    if error != '__all__':
+                        try:
+                            messages.error(request, form.fields[error].errors)
+                        except:
+                            pass
+            else:
+                messages.error(request, 'Formdaki zorunlu alanların tümünü doldurduğunuza ve girilen '
+                                        'tüm bilgilerin doğru olduğuna emin olun!')
             process_status = False
 
         payload = {
