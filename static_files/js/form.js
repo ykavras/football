@@ -57,7 +57,7 @@ $(document).ready(function () {
             size: 'original'
         }).then(function (resp) {
             imageBase64.val(resp);
-            console.log(form.serializeArray())
+            console.log(form.serializeArray());
             $.ajax({
                 url: '/apply',
                 method: 'post',

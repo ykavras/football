@@ -8,12 +8,14 @@ def main(request):
     }
     return render(request, 'main.html', payload)
 
-def apply(request):
+
+def form(request):
     payload = {
         'title': 'Form',
-        'body_id': 'apply'
+        'body_id': 'form'
     }
     return render(request, 'apply.html', payload)
+
 
 def about(request):
     payload = {
