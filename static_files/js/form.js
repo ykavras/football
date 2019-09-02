@@ -10,6 +10,7 @@ $(document).ready(function () {
     const privacyInput = $('#privacy');
     let $uploadCrop;
 
+    /*
     function readFile(input) {
         if (input.files && input.files[0]) {
             const reader = new FileReader();
@@ -36,6 +37,7 @@ $(document).ready(function () {
     ticketBtn.on('click', function () {
         form.addClass('active');
     });
+    */
 
     privacyPopup.on('click', function () {
         if (privacyInput[0].checked === true)
@@ -47,28 +49,6 @@ $(document).ready(function () {
 
     closePopup.on('click', function () {
         popup.removeClass('active');
-    });
-
-    form.on('submit', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        $uploadCrop.croppie('result', {
-            type: 'canvas',
-            size: 'original'
-        }).then(function (resp) {
-            imageBase64.val(resp);
-            console.log(form.serializeArray());
-            $.ajax({
-                url: '/apply/',
-                method: 'post',
-                data: form.serializeArray(),
-                success: function (res) {
-                    console.log(res)
-                }, error: function (err) {
-                    console.log(err)
-                }
-            })
-        });
     });
 
 });
