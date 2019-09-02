@@ -30,9 +30,15 @@ class Application(models.Model):
                                           blank=True)
     id_photo = models.ImageField(verbose_name='Kimlik Fotoğrafı', upload_to=PathAndRename('application/id_photos/'))
     create_date = models.DateTimeField(auto_now_add=True)
+    confirm = models.BooleanField(verbose_name='Onay', default=False)
 
     def __str__(self):
         return f'{self.name} {self.last_name}'
+
+    def has_reference_code(self):
+        return 'Kullanıldı' if self.reference_code else '-'
+
+    has_reference_code.short_description = 'Referans Kodu Var Mı?'
 
     class Meta:
         verbose_name = 'Başvuru'
