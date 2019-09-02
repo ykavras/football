@@ -11,20 +11,25 @@ body {
 
 main {
   position: relative;
+  width: 100%;
+  max-width: 767px;
   height: auto;
+  margin: auto;
   min-height: 100vh;
-  z-index: 2;
+  z-index: 1;
+  padding: 50px 10px;
+  background-color: rgba(0, 0, 0, 0.9);
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  padding: 10px 0;
-}
 
-img {
-  display: block;
-  width: 100%;
-  height: auto;
+  h1 {
+    font-size: 40px;
+    color: $colorWhite;
+    font-family: $montserrat-font;
+    font-weight: 600;
+  }
 }
 
 footer {
