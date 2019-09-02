@@ -65,28 +65,28 @@
                     -->
                     <label for="upload-image">
                         <input type="file" name="id_photo" id="upload-image" required>
-                        <span class="card-span">Kartınızın önyüzünü çekip yükleyiniz.</span>
+                        <span class="card-span">* Kimliğinizin önyüzünü çekip yükleyiniz.</span>
+                    </label>
+                    <label for="name">
+                        <input type="text" name="name" id="name" placeholder="İsim *" required>
+                    </label>
+                    <label for="surname">
+                        <input type="text" name="last_name" id="surname" placeholder="Soyisim *" required>
+                    </label>
+                    <label for="email">
+                        <input type="email" name="email" id="email" placeholder="E-Posta *" required>
+                    </label>
+                    <label for="tel">
+                        <input type="tel" name="phone" id="tel" placeholder="Telefon (+99999999999) *" required>
                     </label>
                     <label for="country">
                         <select name="country" id="country">
                             <option value="Belçika" selected>Belçika</option>
                         </select>
-                        <span class="card-span">* Ülkenizin Belçika olması gerekmektedir.</span>
-                    </label>
-                    <label for="name">
-                        <input type="text" name="name" id="name" placeholder="İsim" required>
-                    </label>
-                    <label for="surname">
-                        <input type="text" name="last_name" id="surname" placeholder="Soyisim" required>
-                    </label>
-                    <label for="email">
-                        <input type="email" name="email" id="email" placeholder="E-Posta" required>
-                    </label>
-                    <label for="tel">
-                        <input type="tel" name="phone" id="tel" placeholder="Telefon (+99999999999)" required>
+                        <span class="card-span">* Yalnızca Belçika'da yaşıyan kişiler başvurabilir.</span>
                     </label>
                     <label for="address">
-                        <input name="address" id="address" placeholder="Adres" required>
+                        <input name="address" id="address" placeholder=" Tam Adres *" required>
                     </label>
                     <label for="reference-code">
                         <input type="text" name="reference_code_string" id="reference-code" placeholder="Referans Kodu">

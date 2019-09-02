@@ -21,8 +21,6 @@ class ApplyView(View):
                 reference_instance.is_used = True
                 reference_instance.save()
 
-            messages.success(request, 'Kaydınız başarıyla alındı. Sonuçlar kesinleştiğinde bizimle paylaştığınız '
-                                      'iletişim kanallarından biri ile sizi bilgilendireceğiz.')
             process_status = True
         else:
             messages.error(request, form.non_field_errors())
