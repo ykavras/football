@@ -48,11 +48,9 @@
     left: 0;
     right: 0;
     top: 0;
-    bottom: 0;
-    z-index: -1;
     width: 100%;
     max-width: 767px;
-    height: 100%;
+    height: calc(100vh - 50px);
     margin: auto;
     -webkit-transition: .4s ease;
     -moz-transition: .4s ease;
@@ -60,14 +58,20 @@
     -o-transition: .4s ease;
     transition: .4s ease;
     opacity: 0;
+    z-index: -1;
+    visibility: hidden;
     overflow: auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    -webkit-border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
 
     &.active {
       opacity: 1;
       z-index: 2;
+      visibility: visible;
     }
 
     .close-form {
@@ -196,7 +200,7 @@
   #img-crop {
     width: 200px;
     height: 170px;
-    margin: auto;
+    margin: auto auto 15px;
     position: relative;
   }
 
@@ -226,7 +230,7 @@
   }
 
   #cropper {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     font-family: $montserrat-font;
