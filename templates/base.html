@@ -12,10 +12,11 @@
 {% block App %}{% endblock %}
 <footer>
     <nav>
-        <a href="{% url 'main:about' %}">Hakkımızda</a>
-        <a href="{% url 'main:sss' %}">S.s.s</a>
-        <a href="#!">Gizlilik</a>
-        <a href="#!">İletişim</a>
+        <a title="Anasayfa" href="{% url 'main:main' %}">Anasayfa</a>
+        <a title="Hakkımızda" href="{% url 'main:about' %}">Hakkımızda</a>
+        <a title="S.s.s" href="{% url 'main:sss' %}">S.s.s</a>
+        <a title="Gizlilik" href="{% url 'main:privacy' %}">Gizlilik</a>
+        <a title="İletişim" href="{% url 'main:contact' %}">İletişim</a>
     </nav>
     <a href="http://www.talkingcodes.com" target="_blank" class="copyright">© 2019, TalkingCodes</a>
 </footer>

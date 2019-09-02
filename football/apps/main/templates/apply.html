@@ -1,0 +1,99 @@
+{% extends 'base.html' %}{% load staticfiles %}
+{% block StyleSheet %}
+    <link rel="stylesheet" href="{% static 'croppie/croppie.css' %}">
+{% endblock %}
+{% block App %}
+    <div class="popup">
+        <img class="close" src="{% static 'img/close.svg' %}" alt="close">
+        <h1>Sözleşme</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam expedita magnam molestias necessitatibus
+            nostrum officiis perferendis, quidem tempora velit veritatis. Culpa debitis delectus doloremque excepturi
+            ipsum labore molestias officia tempora.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam expedita magnam molestias necessitatibus
+            nostrum officiis perferendis, quidem tempora velit veritatis. Culpa debitis delectus doloremque excepturi
+            ipsum labore molestias officia tempora.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam expedita magnam molestias necessitatibus
+            nostrum officiis perferendis, quidem tempora velit veritatis. Culpa debitis delectus doloremque excepturi
+            ipsum labore molestias officia tempora.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam expedita magnam molestias necessitatibus
+            nostrum officiis perferendis, quidem tempora velit veritatis. Culpa debitis delectus doloremque excepturi
+            ipsum labore molestias officia tempora.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam expedita magnam molestias necessitatibus
+            nostrum officiis perferendis, quidem tempora velit veritatis. Culpa debitis delectus doloremque excepturi
+            ipsum labore molestias officia tempora.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam expedita magnam molestias necessitatibus
+            nostrum officiis perferendis, quidem tempora velit veritatis. Culpa debitis delectus doloremque excepturi
+            ipsum labore molestias officia tempora.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam expedita magnam molestias necessitatibus
+            nostrum officiis perferendis, quidem tempora velit veritatis. Culpa debitis delectus doloremque excepturi
+            ipsum labore molestias officia tempora.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam expedita magnam molestias necessitatibus
+            nostrum officiis perferendis, quidem tempora velit veritatis. Culpa debitis delectus doloremque excepturi
+            ipsum labore molestias officia tempora.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam expedita magnam molestias necessitatibus
+            nostrum officiis perferendis, quidem tempora velit veritatis. Culpa debitis delectus doloremque excepturi
+            ipsum labore molestias officia tempora.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam expedita magnam molestias necessitatibus
+            nostrum officiis perferendis, quidem tempora velit veritatis. Culpa debitis delectus doloremque excepturi
+            ipsum labore molestias officia tempora.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam expedita magnam molestias necessitatibus
+            nostrum officiis perferendis, quidem tempora velit veritatis. Culpa debitis delectus doloremque excepturi
+            ipsum labore molestias officia tempora.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam expedita magnam molestias necessitatibus
+            nostrum officiis perferendis, quidem tempora velit veritatis. Culpa debitis delectus doloremque excepturi
+            ipsum labore molestias officia tempora.</p>
+    </div>
+    <main>
+        <div class="content">
+            <h1>Formu <span>Doldurunuz</span></h1>
+            <form enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for message in messages %}
+                    <p class="form-alert">{{ message }}</p>
+                {% endfor %}
+                <div class="form-content">
+                    <div id="img-crop">
+                        <img class="ready" src="{% static 'img/check.svg' %}" alt="check">
+                    </div>
+                    <div id="cropper">
+                        <img src="{% static 'img/cut.svg' %}" alt="cut">
+                        <span>Resmi Kes</span>
+                    </div>
+                    <input type="hidden" id="imagebase64" name="imagebase64">
+                    <label for="upload-image">
+                        <input type="file" name="id_image" id="upload-image" required>
+                    </label>
+                    <label for="name">
+                        <input type="text" name="name" id="name" placeholder="İsim" required>
+                    </label>
+                    <label for="surname">
+                        <input type="text" name="last_name" id="surname" placeholder="Soyisim" required>
+                    </label>
+                    <label for="email">
+                        <input type="email" name="email" id="email" placeholder="E-Posta" required>
+                    </label>
+                    <label for="tel">
+                        <input type="tel" name="phone" id="tel" placeholder="Telefon (+99999999999)" required>
+                    </label>
+                    <label for="address">
+                        <input name="address" id="address" placeholder="Adres" required>
+                    </label>
+                    <label for="reference-code">
+                        <input type="text" name="reference_code_string" id="reference-code" placeholder="Referans Kodu">
+                    </label>
+                    <label for="privacy">
+                        <input type="checkbox" name="privacy" id="privacy" required>
+                        <span>Sözleşmeyi kabul ediyorum.</span>
+                    </label>
+                    <button type="submit" value="Gönder">
+                        <span>Gönder</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+{% endblock %}
+{% block Scripts %}
+    <script src="{% static 'croppie/croppie.min.js' %}"></script>
+    <script src="{% static 'js/form.js' %}"></script>
+{% endblock %}

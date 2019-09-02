@@ -8,6 +8,12 @@ def main(request):
     }
     return render(request, 'main.html', payload)
 
+def apply(request):
+    payload = {
+        'title': 'Form',
+        'body_id': 'apply'
+    }
+    return render(request, 'apply.html', payload)
 
 def about(request):
     payload = {
@@ -23,3 +29,19 @@ def sss(request):
         'body_id': 'sss'
     }
     return render(request, 'sss.html', payload)
+
+
+def privacy(request):
+    payload = {
+        'title': 'Gizlilik',
+        'body_id': 'privacy'
+    }
+    return render(request, 'privacy.html', payload)
+
+
+def contact(request):
+    payload = {
+        'title': 'İletişim',
+        'body_id': 'contact'
+    }
+    return render(request, 'contact.html', payload)

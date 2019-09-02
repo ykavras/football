@@ -1,0 +1,175 @@
+#apply {
+
+  form {
+    padding-top: 30px;
+  }
+
+  .form-alert {
+    font-size: 12px;
+    color: $colorWhite;
+    font-family: $montserrat-font;
+  }
+
+  .form-content {
+    width: 100%;
+    margin: auto;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    span {
+      color: $colorWhite;
+    }
+  }
+
+  label[for=privacy] {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 14px;
+    font-family: $montserrat-font;
+    cursor: pointer;
+
+    input {
+      width: auto;
+      margin-right: 10px;
+    }
+  }
+
+  input {
+    width: 100%;
+    outline: none;
+    font-family: $montserrat-font;
+    color: $colorWhite;
+    font-size: 12px;
+    padding: 10px;
+    -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid $colorWhite;
+
+    &::placeholder {
+      color: $colorWhite;
+    }
+  }
+
+  button {
+    background-color: $colorWhite;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    padding: 6px 24px;
+    cursor: pointer;
+    margin: auto;
+    font-family: $montserrat-font;
+    font-weight: bold;
+    font-size: 14px;
+
+    img {
+      width: 25px;
+      height: 25px;
+      margin-right: 10px;
+    }
+  }
+
+  #img-crop {
+    width: 200px;
+    height: 170px;
+    margin: auto auto 15px;
+    position: relative;
+  }
+
+  .ready {
+    position: absolute;
+    left: -12px;
+    top: -12px;
+    width: 34px;
+    height: 34px;
+    z-index: 2;
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .cr-boundary {
+    height: 120px;
+    background: transparent url("../img/card.png") no-repeat center;
+    -webkit-background-size: contain;
+    background-size: contain;
+  }
+
+  .cr-slider {
+    background-color: white;
+  }
+
+  #cropper {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-family: $montserrat-font;
+    font-size: 14px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    color: $colorWhite;
+
+    img {
+      width: 20px;
+      height: auto;
+      margin-right: 5px;
+    }
+  }
+
+}
+
+@keyframes loop {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes ticket {
+  0% {
+    -webkit-transform: rotate(0) scale(0.8);
+    -moz-transform: rotate(0) scale(0.8);
+    -ms-transform: rotate(0) scale(0.8);
+    -o-transform: rotate(0) scale(0.8);
+    transform: rotate(0) scale(0.8);
+  }
+  50% {
+    -webkit-transform: scale(1) rotate(-45deg);
+    -moz-transform: scale(1) rotate(-45deg);
+    -ms-transform: scale(1) rotate(-45deg);
+    -o-transform: scale(1) rotate(-45deg);
+    transform: scale(1) rotate(-45deg);
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(0.8);
+    -moz-transform: rotate(0) scale(0.8);
+    -ms-transform: rotate(0) scale(0.8);
+    -o-transform: rotate(0) scale(0.8);
+    transform: rotate(0) scale(0.8);
+  }
+}
