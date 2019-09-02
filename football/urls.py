@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('apply/', include('football.apps.apply.urls', namespace='apply')),
+    path('basvuru/', include('football.apps.apply.urls', namespace='apply')),
     path('', include('football.apps.main.urls', namespace='main')),
 ]
 

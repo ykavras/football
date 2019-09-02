@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django.contrib import messages
 from django.views import View
 from django.http import HttpResponseRedirect
@@ -45,3 +46,10 @@ class ApplyView(View):
         print(form)
         print(form.errors)
         return HttpResponseRedirect('/')
+
+    def get(self, request, *args, **kwargs):
+        payload = {
+            'title': 'Başvuru Formu',
+            'body_id': 'form'
+        }
+        return render(request, 'apply.html', payload)

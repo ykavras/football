@@ -5,7 +5,6 @@ app_name = 'main'
 
 urlpatterns = [
     path('', main, name='main'),
-    path('form', form, name='form'),
     path('about', about, name='about'),
     path('sss', sss, name='sss'),
     path('privacy', privacy, name='privacy'),
