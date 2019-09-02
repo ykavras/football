@@ -2,8 +2,6 @@ from django.shortcuts import render
 from django.contrib import messages
 from django.views import View
 from django.http import HttpResponseRedirect
-import base64
-from django.core.files.base import ContentFile
 
 from .forms import ApplicationForm
 
@@ -12,14 +10,8 @@ class ApplyView(View):
     form_class = ApplicationForm
 
     def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST, request.FILES)
-        # image = request.POST['imagebase64']
-        # print(image)
-        # format, imgstr = image.split(';base64,')
-        # ext = format.split('/')[-1]
-
-        # image = ContentFile(base64.b64decode(imgstr), name='temp.' + ext)
-        # form['id_image'] = image
+        form = ApplicationForm(request.POST, request.FILES)
+        # TODO just accept first 300 application
         if form.is_valid():
             instance = form.save(commit=False)
             if form.reference_code_id:
@@ -34,7 +26,7 @@ class ApplyView(View):
                                       'iletişim kanallarından biri ile sizi bilgilendireceğiz.')
         else:
             messages.error(request, 'Formdaki zorunlu alanların tümünü doldurduğunuza ve girilen '
-                                    'tüm bilgilerin doğru girildiğine emin olun!')
+                                    'tüm bilgilerin doğru olduğuna emin olun!')
 
             messages.error(request, form.non_field_errors())
             for error in form.errors:

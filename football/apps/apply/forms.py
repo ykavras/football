@@ -9,14 +9,15 @@ class ApplicationForm(forms.ModelForm):
         fields = ('name', 'last_name', 'email', 'phone', 'address', 'id_photo')
 
     def __init__(self, request, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super().__init__(request, *args, **kwargs)
         reference_code = request['reference_code_string']
         if reference_code:
             try:
                 reference_instance = ReferenceCode.objects.get(code=reference_code)  # check it! is it exist or not
 
                 if reference_instance.is_used:
-                    raise forms.ValidationError('Referans kodunuz daha önceden kullanılmış. Tekrar kullanamazsınız!')
+                    # raise forms.ValidationError('Referans kodunuz daha önceden kullanılmış. Tekrar kullanamazsınız!')
+                    self.add_error('__all__', 'Referans kodunuz daha önceden kullanılmış. Tekrar kullanamazsınız!')
                 else:
                     self.reference_code_id = reference_instance.id
             except ReferenceCode.DoesNotExist:
