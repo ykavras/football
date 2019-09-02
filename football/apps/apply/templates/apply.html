@@ -42,13 +42,16 @@
             ipsum labore molestias officia tempora.</p>
     </div>
     <main>
+        {% if process_status %}
+            <div class="form-success">
+                <img src="{% static 'img/check.svg' %}" alt="check">
+                <div class="title">Formunuz Başarılı Bir Şekilde Gönderilmiştir.</div>
+            </div>
+        {% endif %}
         <div class="content">
             <h1>Formu <span>Doldurunuz</span></h1>
             <form method="post" action="{% url 'apply:apply' %}" enctype="multipart/form-data">
                 {% csrf_token %}
-                {% for message in messages %}
-                    <p class="form-alert">{{ message }}</p>
-                {% endfor %}
                 <div class="form-content">
                     <!--
                     <div id="img-crop">
@@ -90,6 +93,9 @@
                         <span>Gönder</span>
                     </button>
                 </div>
+                {% for message in messages %}
+                    <p class="form-alert">{{ message }}</p>
+                {% endfor %}
             </form>
         </div>
     </main>
