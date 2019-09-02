@@ -44,7 +44,7 @@
     }
   }
 
-  input {
+  input, select {
     width: 100%;
     outline: none;
     font-family: $montserrat-font;
@@ -63,6 +63,10 @@
     &::placeholder {
       color: $colorWhite;
     }
+  }
+
+  select {
+    height: 37px;
   }
 
   button {
