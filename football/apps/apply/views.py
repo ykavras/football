@@ -11,7 +11,6 @@ class ApplyView(View):
 
     def post(self, request, *args, **kwargs):
         form = ApplicationForm(request.POST, request.FILES)
-        # TODO just accept first 300 application
         if form.is_valid():
             instance = form.save(commit=False)
             if form.reference_code_id:
@@ -24,6 +23,7 @@ class ApplyView(View):
 
             messages.success(request, 'Kaydınız başarıyla alındı. Sonuçlar kesinleştiğinde bizimle paylaştığınız '
                                       'iletişim kanallarından biri ile sizi bilgilendireceğiz.')
+            process_status = True
         else:
             messages.error(request, 'Formdaki zorunlu alanların tümünü doldurduğunuza ve girilen '
                                     'tüm bilgilerin doğru olduğuna emin olun!')
@@ -35,9 +35,14 @@ class ApplyView(View):
                         messages.error(request, form.fields[error].errors)
                     except:
                         pass
-        print(form)
-        print(form.errors)
-        return HttpResponseRedirect('/')
+            process_status = False
+
+        payload = {
+            'title': 'Başvuru Formu',
+            'body_id': 'form',
+            'process_status': process_status,
+        }
+        return render(request, 'apply.html', payload)
 
     def get(self, request, *args, **kwargs):
         payload = {
