@@ -42,13 +42,16 @@
             ipsum labore molestias officia tempora.</p>
     </div>
     <main>
+        {% if process_status %}
+            <div class="form-success">
+                <img src="{% static 'img/check.svg' %}" alt="check">
+                <div class="title">Formunuz Başarılı Bir Şekilde Gönderilmiştir.</div>
+            </div>
+        {% endif %}
         <div class="content">
             <h1>Formu <span>Doldurunuz</span></h1>
             <form method="post" action="{% url 'apply:apply' %}" enctype="multipart/form-data">
                 {% csrf_token %}
-                {% for message in messages %}
-                    <p class="form-alert">{{ message }}</p>
-                {% endfor %}
                 <div class="form-content">
                     <!--
                     <div id="img-crop">
@@ -62,7 +65,13 @@
                     -->
                     <label for="upload-image">
                         <input type="file" name="id_photo" id="upload-image" required>
-                        <span class="card-span">Kartınızın Önyüzünü Çekip Atınız</span>
+                        <span class="card-span">Kartınızın önyüzünü çekip yükleyiniz.</span>
+                    </label>
+                    <label for="country">
+                        <select name="country" id="country">
+                            <option value="Belçika" selected>Belçika</option>
+                        </select>
+                        <span class="card-span">* Ülkenizin Belçika olması gerekmektedir.</span>
                     </label>
                     <label for="name">
                         <input type="text" name="name" id="name" placeholder="İsim" required>
@@ -90,6 +99,9 @@
                         <span>Gönder</span>
                     </button>
                 </div>
+                {% for message in messages %}
+                    <p class="form-alert">{{ message }}</p>
+                {% endfor %}
             </form>
         </div>
     </main>
