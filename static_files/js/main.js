@@ -5,6 +5,7 @@ $(document).ready(function () {
     const imageUpload = $('#upload-image');
     const imageBase64 = $('#imagebase64');
     const imgCrop = $('#img-crop');
+    const closeForm = $('.close-form');
     let $uploadCrop;
 
     function readFile(input) {
@@ -46,5 +47,9 @@ $(document).ready(function () {
 
     ticketBtn.on('click', function () {
         form.addClass('active');
+    });
+
+    closeForm.on('click', function () {
+        form.removeClass('active');
     });
 });

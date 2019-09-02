@@ -4,7 +4,7 @@ html, body {
 }
 
 body {
-  background: transparent url("../img/football-bg.jpg") no-repeat center fixed;
+  background: transparent url("../img/home-bg.png") no-repeat center fixed;
   -webkit-background-size: cover;
   background-size: cover;
 }
@@ -13,7 +13,7 @@ main {
   position: relative;
   height: auto;
   min-height: 100vh;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,4 +25,40 @@ img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 15px;
+  font-family: $montserrat-font;
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a {
+    margin: 0 30px;
+    font-size: 18px;
+    color: $colorWhite;
+    text-decoration: none;
+    opacity: 0.5;
+  }
+
+  .copyright {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    color: $colorWhite;
+    font-size: 14px;
+    opacity: 0.5;
+  }
 }

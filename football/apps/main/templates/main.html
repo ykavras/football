@@ -7,23 +7,24 @@
     <main>
         <div class="content">
             <div class="teams">
-                <div class="team" style="background-image: url({% static 'img/logos/gs-logo.png' %})"></div>
+                <div class="team" style="background-image: url({% static 'img/logos/bjk-logo.svg' %})"></div>
                 <div class="info">
                     <p>19:00</p>
                     <p>29 Nisan 2019 Pazar</p>
                 </div>
-                <div class="team" style="background-image: url({% static 'img/logos/bjk-logo.svg' %})"></div>
+                <div class="team" style="background-image: url({% static 'img/logos/gs-logo.png' %})"></div>
             </div>
-            <h1 class="team-names">GALATASARAY - BEŞİKTAŞ</h1>
+            <h1 class="team-names">BEŞİKTAŞ - GALATASARAY</h1>
         </div>
         <a class="ticket-btn">
             <img src="{% static 'img/ticket.svg' %}" alt="ticket">
             <span>Bileti Al</span>
         </a>
         <form method="post" action="{% url 'apply:apply' %}" enctype="multipart/form-data">
+            <img src="{% static 'img/close.svg' %}" alt="close" class="close-form">
             {% csrf_token %}
             {% for message in messages %}
-                <p style="color: black; font-size: 14px">{{ message }}</p>
+                <p class="form-alert">{{ message }}</p>
             {% endfor %}
             <div class="form-content">
                 <div id="img-crop">
