@@ -9,8 +9,25 @@
     font-size: 12px;
     color: red;
     font-family: $montserrat-font;
-    padding: 10px 0;
     text-transform: capitalize;
+
+    > li {
+      text-indent: -9999px;
+
+      &:last-child {
+        margin-bottom: 15px;
+      }
+
+      ul {
+        li {
+          text-indent: 0 !important;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
   }
 
   .form-content {
