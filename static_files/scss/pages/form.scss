@@ -4,11 +4,13 @@
     padding-top: 30px;
   }
 
-  .form-alert {
+  .errorlist {
+    text-align: left;
     font-size: 12px;
     color: red;
     font-family: $montserrat-font;
     padding: 10px 0;
+    text-transform: capitalize;
   }
 
   .form-content {
