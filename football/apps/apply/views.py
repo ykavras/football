@@ -30,6 +30,7 @@ class ApplyView(View):
         payload = {
             'title': 'Başvuru Formu',
             'body_id': 'form',
+            'form': form,
             'process_status': process_status,
         }
         return render(request, 'apply.html', payload)

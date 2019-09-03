@@ -59,13 +59,13 @@
                     <div class="field">
                         <label for="name">
                             <span>Ad</span>
-                            <input type="text" name="name" id="name" required>
+                            <input type="text" name="name" value="{{ form.name.value|default_if_none:"" }}"  id="name" required>
                         </label>
                     </div>
                     <div class="field">
                         <label for="surname">
                             <span>Soyad</span>
-                            <input type="text" name="surname" id="surname" required>
+                            <input type="text" name="last_name" value="{{ form.last_name.value|default_if_none:"" }}" id="surname" required>
                         </label>
                     </div>
                 </div>
@@ -73,13 +73,13 @@
                     <div class="field">
                         <label for="phone">
                             <span>Telefon</span>
-                            <input type="tel" name="phone" id="phone" required>
+                            <input type="tel" name="phone" value="{{ form.phone.value|default_if_none:"" }}" id="phone" required>
                         </label>
                     </div>
                     <div class="field">
                         <label for="email">
                             <span>E-Posta</span>
-                            <input type="email" name="email" id="email" required>
+                            <input type="email" name="email" value="{{ form.email.value|default_if_none:"" }}" id="email" required>
                         </label>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                     <div class="field">
                         <label for="address">
                             <span>Adres</span>
-                            <input type="text" name="address" id="address" required>
+                            <input type="text" name="address" value="{{ form.address.value|default_if_none:"" }}" id="address" required>
                         </label>
                     </div>
                     <div class="field selects">
@@ -110,13 +110,13 @@
                     <div class="field">
                         <label for="reference_code">
                             <span>Referans Kodu</span>
-                            <input type="text" name="reference_code_string" id="reference_code">
+                            <input type="text" name="reference_code_string" value="{{ form.reference_code_string.value|default_if_none:"" }}" id="reference_code">
                         </label>
                     </div>
                     <div class="field">
                         <label for="id_photo">
                             <span>Kimlik Fotoğrafı</span>
-                            <input type="file" name="id_photo" id="id_photo" required>
+                            <input type="file" name="id_photo" value="{{ form.id_photo.value }}" id="id_photo" required>
                             <input type="text" name="file_name" id="file_name">
                         </label>
                     </div>
