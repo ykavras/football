@@ -13,12 +13,12 @@ class ApplicationForm(forms.ModelForm):
         reference_code = request['reference_code_string']
         if reference_code:
             try:
-                reference_instance = ReferenceCode.objects.get(code=reference_code)  # check it! is it exist or not
+                reference_instance = ReferenceCode.objects.get(code=reference_code)
 
-                if reference_instance.is_used:
-                    self.add_error('__all__', 'Referans kodunuz daha önceden kullanılmış. Tekrar kullanamazsınız!')
-                else:
+                if reference_instance.is_available():
                     self.reference_code_id = reference_instance.id
+                else:
+                    self.add_error('__all__', 'Girdiğiniz referans kodu tükenmiştir!')
             except ReferenceCode.DoesNotExist:
                 self.add_error('__all__',
                                'Referans Kodunuz Eşleşmedi. Lütfen kontrol edin eğer referans kodunuz yoksa alanı boş bırakınız')

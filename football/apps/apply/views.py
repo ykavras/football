@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.views import View
 from django.http import HttpResponseRedirect
 
+from .models import ReferenceCode
 from .forms import ApplicationForm
 
 
@@ -40,4 +41,6 @@ class ApplyView(View):
             'title': 'Başvuru Formu',
             'body_id': 'form'
         }
+
+        print(ReferenceCode.objects.first().total_usage())
         return render(request, 'apply.html', payload)
