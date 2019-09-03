@@ -134,7 +134,7 @@ footer {
   }
 }
 
-@media(max-width: 767px) {
+@media(max-width: 768px) {
   body {
     background-image: url("../img/home-bg-mobil.png") !important;
   }
@@ -175,7 +175,7 @@ footer {
     }
   }
   footer {
-    background-color: #000000;
+    background-color: transparent;
 
     a {
       margin: 0 5px;

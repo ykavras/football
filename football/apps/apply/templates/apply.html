@@ -54,6 +54,7 @@
         <div class="content">
             <h1><span>Formu</span> Doldurunuz</h1>
             <form method="post" action="{% url 'apply:apply' %}" enctype="multipart/form-data">
+                {% csrf_token %}
                 <div class="fields">
                     <div class="field">
                         <label for="name">

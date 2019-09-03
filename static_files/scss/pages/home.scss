@@ -66,7 +66,7 @@
     text-decoration: none;
   }
 
-  @media(max-width: 767px) {
+  @media(max-width: 768px) {
     h1 {
       font-size: 40px;
     }
@@ -120,10 +120,19 @@
       }
     }
     .ticket-btn {
-      margin-top: 20px;
       padding: 10px;
       font-size: 14px;
       width: 100px;
+    }
+  }
+  @media (max-width: 480px) and (min-height: 667px) {
+    .ticket-btn {
+      margin-top: 200px;
+    }
+  }
+  @media (max-width: 480px) and (max-height: 667px) {
+    .ticket-btn {
+      margin-top: 160px;
     }
   }
 }
