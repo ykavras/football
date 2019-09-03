@@ -6,7 +6,7 @@ from .models import Application, ReferenceCode
 class ApplicationForm(forms.ModelForm):
     class Meta:
         model = Application
-        fields = ('name', 'last_name', 'email', 'phone', 'address', 'id_photo')
+        fields = ('name', 'last_name', 'email', 'phone', 'city', 'address', 'id_photo')
 
     def __init__(self, request, *args, **kwargs):
         super().__init__(request, *args, **kwargs)

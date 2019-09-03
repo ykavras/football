@@ -58,14 +58,14 @@
                 <div class="fields">
                     <div class="field">
                         <label for="name">
-                            <span>Ad</span>
+                            <span>Ad *</span>
                             <input type="text" name="name" value="{{ form.name.value|default_if_none:"" }}" id="name"
                                    required>
                         </label>
                     </div>
                     <div class="field">
                         <label for="surname">
-                            <span>Soyad</span>
+                            <span>Soyad *</span>
                             <input type="text" name="last_name" value="{{ form.last_name.value|default_if_none:"" }}"
                                    id="surname" required>
                         </label>
@@ -74,14 +74,14 @@
                 <div class="fields">
                     <div class="field">
                         <label for="phone">
-                            <span>Telefon (+905554444444)</span>
+                            <span>Telefon (+905554444444) *</span>
                             <input type="tel" name="phone" value="{{ form.phone.value|default_if_none:"" }}" id="phone"
                                    required>
                         </label>
                     </div>
                     <div class="field">
                         <label for="email">
-                            <span>E-Posta</span>
+                            <span>E-Posta *</span>
                             <input type="email" name="email" value="{{ form.email.value|default_if_none:"" }}"
                                    id="email" required>
                         </label>
@@ -90,15 +90,15 @@
                 <div class="fields fields-cs">
                     <div class="field">
                         <label for="address">
-                            <span>Adres</span>
+                            <span>Adres *</span>
                             <input type="text" name="address" value="{{ form.address.value|default_if_none:"" }}"
                                    id="address" required>
                         </label>
                     </div>
                     <div class="field selects">
                         <label for="cities">
-                            <span>Şehir</span>
-                            <select name="cities" id="cities" required>
+                            <span>Şehir *</span>
+                            <select name="city" id="cities" required>
                                 <option value="Brussels">Brussels</option>
                                 <option value="Antwerp">Antwerp</option>
                                 <option value="Liège">Liège</option>
@@ -168,7 +168,7 @@
                     </div>
                     <div class="field">
                         <label for="id_photo">
-                            <span>Kimlik Fotoğrafı</span>
+                            <span>Kimlik Fotoğrafı *</span>
                             <input type="file" name="id_photo" value="{{ form.id_photo.value }}" id="id_photo" required>
                             <input type="text" name="file_name" id="file_name">
                         </label>
@@ -178,7 +178,7 @@
                     <label for="privacy">
                         <input type="checkbox" name="privacy" id="privacy" required>
                         <span></span>
-                        <p><b>Kişisel Veri Paylaşımı ve İletişim İzni</b> 'ni okuduğumu ve onayladığımı kabul ediyorum.
+                        <p><b>Kişisel Veri Paylaşımı ve İletişim İzni</b> 'ni okuduğumu ve onayladığımı kabul ediyorum. *
                         </p>
                     </label>
                 </div>
