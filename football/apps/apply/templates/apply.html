@@ -51,6 +51,9 @@
         <div class="content">
             <h1>Formu <span>Doldurunuz</span></h1>
             <form method="post" action="{% url 'apply:apply' %}" enctype="multipart/form-data">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
                 {% csrf_token %}
                 <div class="form-content">
                     <!--
@@ -99,9 +102,6 @@
                         <span>Gönder</span>
                     </button>
                 </div>
-                {% for message in messages %}
-                    <p class="form-alert">{{ message }}</p>
-                {% endfor %}
             </form>
         </div>
     </main>

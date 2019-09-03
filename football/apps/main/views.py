@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 def main(request):
     payload = {
-        'title': 'Futbolun Kalbi',
+        'title': 'Anasayfa',
         'body_id': 'football'
     }
     return render(request, 'main.html', payload)
