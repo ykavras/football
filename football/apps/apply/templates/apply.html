@@ -42,10 +42,13 @@
             ipsum labore molestias officia tempora.</p>
     </div>
     <main>
-        {% if process_status %}
+        {% if  process_status %}
             <div class="form-success">
                 <img src="{% static 'img/check.svg' %}" alt="check">
-                <div class="title">Formunuz Başarılı Bir Şekilde Gönderilmiştir.</div>
+                <div class="ty">Teşekkürler</div>
+                <div class="title">Başvurunuz başarılı bir şekilde iletilmiştir</div>
+                <p>İncelemelerimizin ardından başvurunuzda yer alan e-posta adresinize en kısa sürede dönüş
+                    sağlanacaktır.</p>
             </div>
         {% endif %}
         <div class="content">
@@ -113,6 +116,7 @@
                         <label for="id_photo">
                             <span>Kimlik Fotoğrafı</span>
                             <input type="file" name="id_photo" id="id_photo" required>
+                            <input type="text" name="file_name" id="file_name">
                         </label>
                     </div>
                 </div>
@@ -127,11 +131,6 @@
                 {% for message in messages %}
                     {{ message }}
                 {% endfor %}
-                <ul class="errorlist">
-                    <ul>
-                        <li>Lütfen e-posta bilgilerinizi kontrol ediniz!</li>
-                    </ul>
-                </ul>
                 <button type="submit">Başvuruyu Gönder</button>
             </form>
         </div>

@@ -8,6 +8,8 @@ $(document).ready(function () {
     const popup = $('.popup');
     const closePopup = $('.close');
     const privacyInput = $('#privacy');
+    const idPhoto = $('#id_photo');
+    const fileName = $('#file_name');
     let $uploadCrop;
 
     /*
@@ -49,6 +51,11 @@ $(document).ready(function () {
 
     closePopup.on('click', function () {
         popup.removeClass('active');
+    });
+
+
+    idPhoto.on('change', function () {
+        fileName.val(this.files.item(0).name);
     });
 
 });
