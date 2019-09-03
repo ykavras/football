@@ -18,4 +18,15 @@
     display: block;
     padding: 4px 0;
   }
+
+  @media (max-width: 767px) {
+    .address, .link {
+      font-size: 18px;
+    }
+  }
+  @media (max-width: 480px) {
+    .address, .link {
+      font-size: 14px;
+    }
+  }
 }

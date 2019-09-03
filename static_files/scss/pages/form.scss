@@ -100,7 +100,7 @@
     border-radius: 5px;
     padding: 6px 24px;
     cursor: pointer;
-    margin: auto;
+    margin: auto auto 10px;
     font-family: $montserrat-font;
     font-weight: bold;
     font-size: 14px;
@@ -201,6 +201,11 @@
     }
   }
 
+  @media(max-width: 767px) {
+    .card-span {
+      font-size: 10px;
+    }
+  }
 }
 
 @keyframes loop {

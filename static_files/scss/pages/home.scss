@@ -2,12 +2,13 @@
 
   h1 {
     font-size: 60px;
+    line-height: 1.2;
   }
 
   .teams {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
   }
 
   .team-logo {
@@ -16,11 +17,12 @@
     background: transparent no-repeat center;
     -webkit-background-size: contain;
     background-size: contain;
-    margin: 40px 0 20px;
+    margin: 40px auto 20px;
   }
 
   .team-name {
     font-size: 20px;
+    line-height: 1.4;
     color: $colorWhite;
     font-family: $montserrat-font;
     font-weight: bold;
@@ -57,10 +59,71 @@
     padding: 14px;
     display: block;
     margin: 40px auto 0;
-    -webkit-border-radius: 14px;
-    -moz-border-radius: 14px;
-    border-radius: 14px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
     background-color: $colorYellow;
     text-decoration: none;
+  }
+
+  @media(max-width: 767px) {
+    h1 {
+      font-size: 40px;
+    }
+    .team-logo {
+      width: 100px;
+      height: 100px;
+      margin: 20px auto;
+    }
+    .team-name {
+      font-size: 14px;
+    }
+    .info {
+      padding: 10px;
+
+      time {
+        &.hour {
+          font-size: 40px;
+        }
+
+        &.date {
+          font-size: 18px;
+          margin-top: 15px;
+        }
+      }
+    }
+    .ticket-btn {
+      margin-top: 20px;
+    }
+  }
+  @media(max-width: 480px) {
+    h1 {
+      font-size: 30px;
+    }
+    .team-logo {
+      width: 80px;
+      height: 80px;
+      margin: 20px auto 10px;
+    }
+    .team-name {
+      font-size: 12px;
+    }
+    .info {
+      time {
+        &.hour {
+          font-size: 30px;
+        }
+
+        &.date {
+          font-size: 14px;
+        }
+      }
+    }
+    .ticket-btn {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 14px;
+      width: 100px;
+    }
   }
 }

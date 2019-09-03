@@ -21,5 +21,39 @@
       padding: 10px 0;
       opacity: 0.6;
     }
+
+    .title, p {
+      line-height: 1.2;
+    }
+  }
+
+  @media(max-width: 767px) {
+    .questions {
+      li {
+        margin-bottom: 15px;
+      }
+
+      .title {
+        font-size: 20px;
+      }
+    }
+  }
+  @media(max-width: 480px) {
+    .questions {
+      padding-top: 15px;
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      .title {
+        font-size: 14px;
+      }
+
+      p {
+        padding: 5px 0;
+        font-size: 12px;
+      }
+    }
   }
 }

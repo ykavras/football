@@ -7,4 +7,16 @@
     opacity: 0.8;
     padding: 30px;
   }
+
+  @media (max-width: 767px) {
+    .about-p {
+      font-size: 16px;
+      padding: 30px 15px;
+    }
+  }
+  @media (max-width: 480px) {
+    .about-p {
+      font-size: 12px;
+    }
+  }
 }
