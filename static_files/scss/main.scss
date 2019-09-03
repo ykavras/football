@@ -18,7 +18,7 @@ main {
   min-height: 100vh;
   z-index: 1;
   padding: 50px 20px 80px;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
   display: flex;
   align-items: center;
@@ -140,10 +140,23 @@ footer {
   }
   main {
     max-width: 480px;
-    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px 20px;
 
     h1 {
       font-size: 30px;
+    }
+  }
+  .popup {
+    padding: 30px 15px;
+
+    h1 {
+      font-size: 24px;
+      padding-bottom: 15px;
+    }
+
+    p {
+      font-size: 12px;
+      padding: 5px 0;
     }
   }
 }
