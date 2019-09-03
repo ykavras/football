@@ -49,90 +49,59 @@
             </div>
         {% endif %}
         <div class="content">
-            <h1><span>Formu</span> Doldurunuz</h1>
+            <h1>Formu <span>Doldurunuz</span></h1>
             <form method="post" action="{% url 'apply:apply' %}" enctype="multipart/form-data">
-                <div class="fields">
-                    <div class="field">
-                        <label for="name">
-                            <span>Ad</span>
-                            <input type="text" name="name" id="name" required>
-                        </label>
-                    </div>
-                    <div class="field">
-                        <label for="surname">
-                            <span>Soyad</span>
-                            <input type="text" name="surname" id="surname" required>
-                        </label>
-                    </div>
-                </div>
-                <div class="fields">
-                    <div class="field">
-                        <label for="phone">
-                            <span>Telefon</span>
-                            <input type="tel" name="phone" id="phone" required>
-                        </label>
-                    </div>
-                    <div class="field">
-                        <label for="email">
-                            <span>E-Posta</span>
-                            <input type="email" name="email" id="email" required>
-                        </label>
-                    </div>
-                </div>
-                <div class="fields">
-                    <div class="field">
-                        <label for="address">
-                            <span>Adres</span>
-                            <input type="text" name="address" id="address" required>
-                        </label>
-                    </div>
-                    <div class="field selects">
-                        <label for="cities">
-                            <span>Şehir</span>
-                            <select name="cities" id="cities" required>
-                                <option value="Brüksel">Brüksel</option>
-                            </select>
-                        </label>
-                        <label for="country">
-                            <span>Ülke</span>
-                            <select name="country" id="country" disabled required>
-                                <option value="Belçika" selected>Belçika</option>
-                            </select>
-                        </label>
-                        <span class="small-warning">*Sadece Belçika'dan başvuru yapılmaktadır.</span>
-                    </div>
-                </div>
-                <div class="fields">
-                    <div class="field">
-                        <label for="reference_code">
-                            <span>Referans Kodu</span>
-                            <input type="text" name="reference_code_string" id="reference_code">
-                        </label>
-                    </div>
-                    <div class="field">
-                        <label for="id_photo">
-                            <span>Kimlik Fotoğrafı</span>
-                            <input type="file" name="id_photo" id="id_photo" required>
-                        </label>
-                    </div>
-                </div>
-                <div class="checked">
-                    <label for="privacy">
-                        <input type="checkbox" name="privacy" id="privacy" required>
-                        <span></span>
-                        <p><b>Kişisel Veri Paylaşımı ve İletişim İzni</b> 'ni okuduğumu ve onayladığımı kabul ediyorum.
-                        </p>
-                    </label>
-                </div>
                 {% for message in messages %}
                     {{ message }}
                 {% endfor %}
-                <ul class="errorlist">
-                    <ul>
-                        <li>Lütfen e-posta bilgilerinizi kontrol ediniz!</li>
-                    </ul>
-                </ul>
-                <button type="submit">Başvuruyu Gönder</button>
+                {% csrf_token %}
+                <div class="form-content">
+                    <!--
+                    <div id="img-crop">
+                            <img class="ready" src="{% static 'img/check.svg' %}" alt="check">
+                        </div>
+                        <div id="cropper">
+                            <img src="{% static 'img/cut.svg' %}" alt="cut">
+                            <span>Resmi Kes</span>
+                        </div>
+                        <input type="hidden" id="imagebase64" name="imagebase64">
+                    -->
+                    <label for="upload-image">
+                        <input type="file" name="id_photo" id="upload-image" required>
+                        <span class="card-span">* Kimliğinizin önyüzünü çekip yükleyiniz.</span>
+                    </label>
+                    <label for="name">
+                        <input type="text" name="name" id="name" placeholder="İsim *" required>
+                    </label>
+                    <label for="surname">
+                        <input type="text" name="last_name" id="surname" placeholder="Soyisim *" required>
+                    </label>
+                    <label for="email">
+                        <input type="email" name="email" id="email" placeholder="E-Posta *" required>
+                    </label>
+                    <label for="tel">
+                        <input type="tel" name="phone" id="tel" placeholder="Telefon (+99999999999) *" required>
+                    </label>
+                    <label for="country">
+                        <select name="country" id="country">
+                            <option value="Belçika" selected>Belçika</option>
+                        </select>
+                        <span class="card-span">* Yalnızca Belçika'da yaşıyan kişiler başvurabilir.</span>
+                    </label>
+                    <label for="address">
+                        <input name="address" id="address" placeholder=" Tam Adres *" required>
+                    </label>
+                    <label for="reference-code">
+                        <input type="text" name="reference_code_string" id="reference-code" placeholder="Referans Kodu">
+                    </label>
+                    <label for="privacy">
+                        <input type="checkbox" name="privacy" id="privacy" required>
+                        <span>Sözleşmeyi kabul ediyorum.</span>
+                    </label>
+                    <button type="submit" value="Gönder">
+                        <span>Gönder</span>
+                    </button>
+                </div>
             </form>
         </div>
     </main>

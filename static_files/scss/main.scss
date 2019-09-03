@@ -4,7 +4,7 @@ html, body {
 }
 
 body {
-  background: transparent url("../img/home-bg.png") no-repeat center fixed;
+  background: transparent url("../img/home-bg-desktop.png") no-repeat center fixed;
   -webkit-background-size: cover;
   background-size: cover;
 }
@@ -28,7 +28,7 @@ main {
     font-size: 40px;
     color: $colorWhite;
     font-family: $montserrat-font;
-    font-weight: 600;
+    font-weight: bold;
 
     span {
       color: $colorYellow;
@@ -135,6 +135,9 @@ footer {
 }
 
 @media(max-width: 767px) {
+  body {
+    background-image: url("../img/home-bg-mobil.png") !important;
+  }
   main {
     max-width: 480px;
     background-color: rgba(0, 0, 0, 0.5);
