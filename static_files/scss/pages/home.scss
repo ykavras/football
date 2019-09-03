@@ -3,6 +3,11 @@
   h1 {
     font-size: 60px;
     line-height: 1.2;
+
+    .letter {
+      display: inline-block;
+      line-height: 1em;
+    }
   }
 
   .teams {

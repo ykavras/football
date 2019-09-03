@@ -2,7 +2,7 @@
 {% block App %}
     <main>
         <div class="content">
-            <h1>Büyük <span>Karşılaşma</span></h1>
+            <h1 class="ml2">Büyük Karşılaşma</h1>
             <div class="teams">
                 <div class="team">
                     <div class="team-logo" style="background-image: url({% static 'img/logos/cb-logo.png' %})"></div>
@@ -20,4 +20,8 @@
             <a href="{% url 'apply:apply' %}" class="ticket-btn" title="Bilet Al">Bilet Al</a>
         </div>
     </main>
+{% endblock %}
+{% block Scripts %}
+    <script src="{% static 'animejs/lib/anime.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/anime.js' %}"></script>
 {% endblock %}
