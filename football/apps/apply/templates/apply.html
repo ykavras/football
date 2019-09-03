@@ -59,27 +59,31 @@
                     <div class="field">
                         <label for="name">
                             <span>Ad</span>
-                            <input type="text" name="name" value="{{ form.name.value|default_if_none:"" }}"  id="name" required>
+                            <input type="text" name="name" value="{{ form.name.value|default_if_none:"" }}" id="name"
+                                   required>
                         </label>
                     </div>
                     <div class="field">
                         <label for="surname">
                             <span>Soyad</span>
-                            <input type="text" name="last_name" value="{{ form.last_name.value|default_if_none:"" }}" id="surname" required>
+                            <input type="text" name="last_name" value="{{ form.last_name.value|default_if_none:"" }}"
+                                   id="surname" required>
                         </label>
                     </div>
                 </div>
                 <div class="fields">
                     <div class="field">
                         <label for="phone">
-                            <span>Telefon</span>
-                            <input type="tel" name="phone" value="{{ form.phone.value|default_if_none:"" }}" id="phone" required>
+                            <span>Telefon (+905554444444)</span>
+                            <input type="tel" name="phone" value="{{ form.phone.value|default_if_none:"" }}" id="phone"
+                                   required>
                         </label>
                     </div>
                     <div class="field">
                         <label for="email">
                             <span>E-Posta</span>
-                            <input type="email" name="email" value="{{ form.email.value|default_if_none:"" }}" id="email" required>
+                            <input type="email" name="email" value="{{ form.email.value|default_if_none:"" }}"
+                                   id="email" required>
                         </label>
                     </div>
                 </div>
@@ -87,14 +91,61 @@
                     <div class="field">
                         <label for="address">
                             <span>Adres</span>
-                            <input type="text" name="address" value="{{ form.address.value|default_if_none:"" }}" id="address" required>
+                            <input type="text" name="address" value="{{ form.address.value|default_if_none:"" }}"
+                                   id="address" required>
                         </label>
                     </div>
                     <div class="field selects">
                         <label for="cities">
                             <span>Şehir</span>
-                            <select name="cities" id="cities" required>
-                                <option value="Brüksel">Brüksel</option>
+                            <select name="cities" id="cities">
+                                <option value="Brussels">Brussels</option>
+                                <option value="Antwerp">Antwerp</option>
+                                <option value="Liège">Liège</option>
+                                <option value="Gent">Gent</option>
+                                <option value="Charleroi">Charleroi</option>
+                                <option value="Brugge">Brugge</option>
+                                <option value="Namur">Namur</option>
+                                <option value="Mons">Mons</option>
+                                <option value="Hasselt">Hasselt</option>
+                                <option value="Arlon">Arlon</option>
+                                <option value="Mouscron">Mouscron</option>
+                                <option value="Vilvoorde">Vilvoorde</option>
+                                <option value="Virton">Virton</option>
+                                <option value="Tournai">Tournai</option>
+                                <option value="Leuven">Leuven</option>
+                                <option value="Ieper">Ieper</option>
+                                <option value="Roeselare">Roeselare</option>
+                                <option value="Dendermonde">Dendermonde</option>
+                                <option value="Tielt">Tielt</option>
+                                <option value="Veurne">Veurne</option>
+                                <option value="Oudenaarde">Oudenaarde</option>
+                                <option value="Philippeville">Philippeville</option>
+                                <option value="Waremme">Waremme</option>
+                                <option value="Oostende">Oostende</option>
+                                <option value="Wavre">Wavre</option>
+                                <option value="Thuin">Thuin</option>
+                                <option value="Ath">Ath</option>
+                                <option value="Hannut">Hannut</option>
+                                <option value="Marche-en-Famenne">Marche-en-Famenne</option>
+                                <option value="Tongeren">Tongeren</option>
+                                <option value="Maaseik">Maaseik</option>
+                                <option value="Mechelen">Mechelen</option>
+                                <option value="Lincent">Lincent</option>
+                                <option value="Huy">Huy</option>
+                                <option value="Nivelles">Nivelles</option>
+                                <option value="Aalst">Aalst</option>
+                                <option value="Enghien">Enghien</option>
+                                <option value="Soignies">Soignies</option>
+                                <option value="Dinant">Dinant</option>
+                                <option value="Eeklo">Eeklo</option>
+                                <option value="Neufchâteau">Neufchâteau</option>
+                                <option value="Turnhout">Turnhout</option>
+                                <option value="Verviers">Verviers</option>
+                                <option value="Kortrijk">Kortrijk</option>
+                                <option value="Bastogne">Bastogne</option>
+                                <option value="Sint-Niklaas">Sint-Niklaas</option>
+                                <option value="Diksmuide">Diksmuide</option>
                             </select>
                         </label>
                         <label for="country">
@@ -110,7 +161,9 @@
                     <div class="field">
                         <label for="reference_code">
                             <span>Referans Kodu</span>
-                            <input type="text" name="reference_code_string" value="{{ form.reference_code_string.value|default_if_none:"" }}" id="reference_code">
+                            <input type="text" name="reference_code_string"
+                                   value="{{ form.reference_code_string.value|default_if_none:"" }}"
+                                   id="reference_code">
                         </label>
                     </div>
                     <div class="field">

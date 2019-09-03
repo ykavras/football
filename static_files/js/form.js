@@ -53,7 +53,6 @@ $(document).ready(function () {
         popup.removeClass('active');
     });
 
-
     idPhoto.on('change', function () {
         fileName.val(this.files.item(0).name);
     });
