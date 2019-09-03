@@ -41,16 +41,16 @@
             nostrum officiis perferendis, quidem tempora velit veritatis. Culpa debitis delectus doloremque excepturi
             ipsum labore molestias officia tempora.</p>
     </div>
+    {% if  process_status %}
+        <div class="form-success">
+            <img src="{% static 'img/check.svg' %}" alt="check">
+            <div class="ty">Teşekkürler</div>
+            <div class="title">Başvurunuz başarılı bir şekilde iletilmiştir</div>
+            <p>İncelemelerimizin ardından başvurunuzda yer alan e-posta adresinize en kısa sürede dönüş
+                sağlanacaktır.</p>
+        </div>
+    {% endif %}
     <main>
-        {% if  process_status %}
-            <div class="form-success">
-                <img src="{% static 'img/check.svg' %}" alt="check">
-                <div class="ty">Teşekkürler</div>
-                <div class="title">Başvurunuz başarılı bir şekilde iletilmiştir</div>
-                <p>İncelemelerimizin ardından başvurunuzda yer alan e-posta adresinize en kısa sürede dönüş
-                    sağlanacaktır.</p>
-            </div>
-        {% endif %}
         <div class="content">
             <h1><span>Formu</span> Doldurunuz</h1>
             <form method="post" action="{% url 'apply:apply' %}" enctype="multipart/form-data">
