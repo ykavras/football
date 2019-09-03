@@ -12,7 +12,7 @@ class ApplyView(View):
     def post(self, request, *args, **kwargs):
         form = ApplicationForm(request.POST, request.FILES)
         if form.is_valid():
-            instance = form.save(commit=False)
+            instance = form.save()
             if form.reference_code_id:
                 instance.reference_code_id = form.reference_code_id
                 instance.save()
