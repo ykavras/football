@@ -42,5 +42,4 @@ class ApplyView(View):
             'body_id': 'form'
         }
 
-        print(ReferenceCode.objects.first().total_usage())
         return render(request, 'apply.html', payload)
