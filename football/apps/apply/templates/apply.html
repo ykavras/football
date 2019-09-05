@@ -29,13 +29,15 @@
         <p>Kişisel verileriniz, yukarıda belirtilen hukuki sebeplere dayanarak sözlü, yazılı veya elektronik ortam; web
             sitemiz, e-posta veya çağrı merkezi gibi kanallar aracılığıyla toplanabilir.</p>
     </div>
-    {% if  process_status %}
+    {% if not  process_status %}
         <div class="form-success">
-            <img src="{% static 'img/check.svg' %}" alt="check">
-            <div class="ty">Teşekkürler</div>
-            <div class="title">Başvurunuz başarılı bir şekilde iletilmiştir</div>
-            <p>İncelemelerimizin ardından başvurunuzda yer alan e-posta adresinize en kısa sürede dönüş
-                sağlanacaktır.</p>
+            <div>
+                <img src="{% static 'img/check.svg' %}" alt="check">
+                <div class="ty">Teşekkürler</div>
+                <div class="title">Başvurunuz başarılı bir şekilde iletilmiştir</div>
+                <p>İncelemelerimizin ardından başvurunuzda yer alan e-posta adresinize en kısa sürede dönüş
+                    sağlanacaktır.</p>
+            </div>
         </div>
     {% endif %}
     <main>
