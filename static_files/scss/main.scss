@@ -23,7 +23,8 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 
   h1 {
     font-size: 40px;
@@ -38,6 +39,7 @@ main {
 
   .content {
     width: 100%;
+    margin: auto;
   }
 }
 
@@ -247,15 +249,16 @@ footer {
 
 @media(max-width: 480px) {
   main {
-    padding: 20px 15px 52px;
+    padding: 15px 15px 52px;
+    height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+    min-height: calc(var(--vh, 1vh) * 100);
 
     h1 {
       font-size: 20px;
     }
   }
   footer {
-    background-color: transparent;
-
     a {
       margin: 0 5px;
     }
